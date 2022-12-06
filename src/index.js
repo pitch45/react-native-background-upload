@@ -32,16 +32,6 @@ const eventPrefix = 'RNFileUploader-';
 
 const eventEmitter = new NativeEventEmitter(NativeModule);
 
-// add event listeners so they always fire on the native side
-if (Platform.OS === 'ios') {
-  const identity = () => {};
-  eventEmitter.addListener(eventPrefix + 'progress', identity)
-  eventEmitter.addListener(eventPrefix + 'error', identity)
-  eventEmitter.addListener(eventPrefix + 'cancelled', identity)
-  eventEmitter.addListener(eventPrefix + 'completed', identity)
-  eventEmitter.addListener(eventPrefix + 'bgExpired', identity)
-}
-
 /*
 Gets file information for the path specified.
 Example valid path is:

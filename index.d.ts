@@ -120,10 +120,6 @@ declare module "react-native-background-upload" {
         static addListener(event: 'cancelled', uploadId: uploadId | null, callback: (data: EventData) => void): EventSubscription
         static getFileInfo(path: string): Promise<FileInfo>
         static cancelUpload(uploadId: uploadId): Promise<boolean>
-        static canSuspendIfBackground(): void
-        static getRemainingBgTime(): Promise<number>
-        static beginBackgroundTask(): Promise<number>
-        static endBackgroundTask(id: number): void
     }
 
 }
